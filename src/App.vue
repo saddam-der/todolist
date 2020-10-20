@@ -1,29 +1,39 @@
 <template>
+  <b-container>
   <div id="app">
-    <img alt="Vue logo" src="./assets/logo.png" />
-    <HelloWorld msg="Welcome to Your Vue.js + TypeScript App" />
+    <div class="mt-3">
+    <b-card-group deck class="mb-5">
+      <b-card border-variant="dark" header="Todo App" align="center">
+        <b-card-text>
+          <TodoInput />
+        <TodoList />
+        </b-card-text>
+      </b-card>
+    </b-card-group>
   </div>
+    
+    
+  </div>
+  </b-container>
 </template>
 
 <script lang="ts">
 import { Component, Vue } from "vue-property-decorator";
-import HelloWorld from "./components/HelloWorld.vue";
+import TodoInput from "@/components/TodoInput.vue";
+import TodoList from "@/components/TodoList.vue";
 
 @Component({
   components: {
-    HelloWorld
+    TodoInput,
+    TodoList
   }
 })
+
 export default class App extends Vue {}
 </script>
 
 <style>
-#app {
-  font-family: Avenir, Helvetica, Arial, sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
+  #app {
   text-align: center;
-  color: #2c3e50;
-  margin-top: 60px;
 }
 </style>
